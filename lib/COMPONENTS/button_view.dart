@@ -65,23 +65,19 @@ class _ButtonViewState extends State<ButtonView> {
       onTap: widget.isDisabled ? null : widget.onPress,
       child: AnimatedOpacity(
         duration: Duration(milliseconds: 100),
-        opacity: widget.isDisabled
-            ? 0.5
-            : _opacity, // Set opacity based on disabled state
-        child: IntrinsicWidth(
-          child: Container(
-            decoration: BoxDecoration(
-              color: widget.backgroundColor,
-              borderRadius: BorderRadius.circular(widget.radius),
-            ),
-            padding: EdgeInsets.only(
-              top: widget.paddingTop,
-              left: widget.paddingLeft,
-              right: widget.paddingRight,
-              bottom: widget.paddingBottom,
-            ),
-            child: widget.child,
+        opacity: widget.isDisabled ? 0.5 : _opacity,
+        child: Container(
+          decoration: BoxDecoration(
+            color: widget.backgroundColor,
+            borderRadius: BorderRadius.circular(widget.radius),
           ),
+          padding: EdgeInsets.only(
+            top: widget.paddingTop,
+            left: widget.paddingLeft,
+            right: widget.paddingRight,
+            bottom: widget.paddingBottom,
+          ),
+          child: widget.child,
         ),
       ),
     );

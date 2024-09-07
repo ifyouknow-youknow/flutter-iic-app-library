@@ -32,7 +32,7 @@ class TextView extends StatefulWidget {
   final TextAlign align;
   final bool wrap;
   final double spacing;
-  final bool isStriked; // Added isStriked property
+  final bool isStriked;
 
   @override
   _TextViewState createState() => _TextViewState();
@@ -46,8 +46,21 @@ class _TextViewState extends State<TextView> {
   @override
   void initState() {
     super.initState();
+    _initializeText();
+  }
+
+  @override
+  void didUpdateWidget(covariant TextView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.text != oldWidget.text) {
+      _initializeText();
+    }
+  }
+
+  void _initializeText() {
     if (widget.isTypewriter) {
       _displayedText = '';
+      _currentIndex = 0;
       _startTypewriterEffect();
     } else {
       _displayedText = widget.text;
@@ -55,6 +68,7 @@ class _TextViewState extends State<TextView> {
   }
 
   void _startTypewriterEffect() {
+    _timer?.cancel();
     _timer = Timer.periodic(widget.interval, (timer) {
       if (_currentIndex < widget.text.length) {
         setState(() {
