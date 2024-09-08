@@ -27,11 +27,9 @@ class _AlertViewState extends State<AlertView> {
             text: widget.title,
             size: 20,
             weight: FontWeight.w600,
+            wrap: true,
           ),
-          content: TextView(
-            text: widget.message,
-            size: 16,
-          ),
+          content: TextView(text: widget.message, size: 16, wrap: true),
           actions: widget.actions,
         ),
       ),
