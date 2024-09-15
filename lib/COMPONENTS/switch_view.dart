@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:koukoku_ads/FUNCTIONS/colors.dart';
+import 'package:nothing_bagel_app_template/FUNCTIONS/colors.dart';
 
 class SwitchView extends StatefulWidget {
   final ValueChanged<bool> onChange;

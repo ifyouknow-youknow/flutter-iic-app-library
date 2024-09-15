@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:koukoku_ads/COMPONENTS/padding_view.dart';
-import 'package:koukoku_ads/COMPONENTS/roundedcorners_view.dart';
-import 'package:koukoku_ads/COMPONENTS/text_view.dart';
-import 'package:koukoku_ads/MODELS/screen.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/padding_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/roundedcorners_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/text_view.dart';
+import 'package:nothing_bagel_app_template/MODELS/screen.dart';
 
 class BubbleView extends StatefulWidget {
   final IconData icon;

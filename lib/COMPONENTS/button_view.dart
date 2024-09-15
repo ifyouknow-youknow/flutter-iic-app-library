@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:koukoku_ads/FUNCTIONS/colors.dart'; // Ensure this file has the `hexToColor` function.
+import 'package:nothing_bagel_app_template/FUNCTIONS/colors.dart'; // Ensure this file has the `hexToColor` function.
 
 class ButtonView extends StatefulWidget {
   final Widget child;

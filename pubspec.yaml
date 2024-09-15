@@ -1,5 +1,5 @@
-name: koukoku_ads
-description: "Official Flutter IIC app template."
+name: nothing_bagel_app_template
+description: "Official Flutter Nothing Bagel app template."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev

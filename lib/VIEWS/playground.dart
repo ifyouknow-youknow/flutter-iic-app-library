@@ -3,40 +3,40 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:koukoku_ads/COMPONENTS/accordion_view.dart';
-import 'package:koukoku_ads/COMPONENTS/bargraph_view.dart';
-import 'package:koukoku_ads/COMPONENTS/blur_view.dart';
-import 'package:koukoku_ads/COMPONENTS/button_view.dart';
-import 'package:koukoku_ads/COMPONENTS/calendar_view.dart';
-import 'package:koukoku_ads/COMPONENTS/checkbox_view.dart';
-import 'package:koukoku_ads/COMPONENTS/circleprogress_view.dart';
-import 'package:koukoku_ads/COMPONENTS/dropdown_view.dart';
-import 'package:koukoku_ads/COMPONENTS/fade_view.dart';
-import 'package:koukoku_ads/COMPONENTS/iconbutton_view.dart';
-import 'package:koukoku_ads/COMPONENTS/loading_view.dart';
-import 'package:koukoku_ads/COMPONENTS/main_view.dart';
-import 'package:koukoku_ads/COMPONENTS/map_view.dart';
-import 'package:koukoku_ads/COMPONENTS/padding_view.dart';
-import 'package:koukoku_ads/COMPONENTS/pager_view.dart';
-import 'package:koukoku_ads/COMPONENTS/pill_view.dart';
-import 'package:koukoku_ads/COMPONENTS/progress_view.dart';
-import 'package:koukoku_ads/COMPONENTS/qrcode_view.dart';
-import 'package:koukoku_ads/COMPONENTS/roundedcorners_view.dart';
-import 'package:koukoku_ads/COMPONENTS/segmented_view.dart';
-import 'package:koukoku_ads/COMPONENTS/slider_view.dart';
-import 'package:koukoku_ads/COMPONENTS/switch_view.dart';
-import 'package:koukoku_ads/COMPONENTS/text_view.dart';
-import 'package:koukoku_ads/FUNCTIONS/colors.dart';
-import 'package:koukoku_ads/FUNCTIONS/date.dart';
-import 'package:koukoku_ads/FUNCTIONS/media.dart';
-import 'package:koukoku_ads/FUNCTIONS/misc.dart';
-import 'package:koukoku_ads/FUNCTIONS/recorder.dart';
-import 'package:koukoku_ads/FUNCTIONS/server.dart';
-import 'package:koukoku_ads/MODELS/coco.dart';
-import 'package:koukoku_ads/MODELS/constants.dart';
-import 'package:koukoku_ads/MODELS/DATAMASTER/datamaster.dart';
-import 'package:koukoku_ads/MODELS/firebase.dart';
-import 'package:koukoku_ads/MODELS/screen.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/accordion_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/bargraph_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/blur_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/button_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/calendar_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/checkbox_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/circleprogress_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/dropdown_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/fade_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/iconbutton_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/loading_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/main_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/map_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/padding_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/pager_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/pill_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/progress_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/qrcode_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/roundedcorners_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/segmented_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/slider_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/switch_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/text_view.dart';
+import 'package:nothing_bagel_app_template/FUNCTIONS/colors.dart';
+import 'package:nothing_bagel_app_template/FUNCTIONS/date.dart';
+import 'package:nothing_bagel_app_template/FUNCTIONS/media.dart';
+import 'package:nothing_bagel_app_template/FUNCTIONS/misc.dart';
+import 'package:nothing_bagel_app_template/FUNCTIONS/recorder.dart';
+import 'package:nothing_bagel_app_template/FUNCTIONS/server.dart';
+import 'package:nothing_bagel_app_template/MODELS/coco.dart';
+import 'package:nothing_bagel_app_template/MODELS/constants.dart';
+import 'package:nothing_bagel_app_template/MODELS/DATAMASTER/datamaster.dart';
+import 'package:nothing_bagel_app_template/MODELS/firebase.dart';
+import 'package:nothing_bagel_app_template/MODELS/screen.dart';
 import 'package:record/record.dart';
 
 class PlaygroundView extends StatefulWidget {
@@ -54,7 +54,9 @@ class _PlaygroundViewState extends State<PlaygroundView> {
       const PaddingView(
         child: Center(
           child: TextView(
-            text: "Hello! This is the IIC Flutter App Template",
+            text: "The Bagel rules Nothing.",
+            size: 23,
+            weight: FontWeight.w600,
           ),
         ),
       ),
@@ -62,11 +64,15 @@ class _PlaygroundViewState extends State<PlaygroundView> {
         height: 20,
       ),
       ButtonView(
-          child: const TextView(
-            text: 'Press Me',
+          child: const PillView(
+            child: TextView(
+              text: 'Press Me',
+            ),
           ),
           onPress: () {
-            function_ScanQRCode(context);
+            setState(() {
+              widget.dm.praiseTheBagel();
+            });
           }),
       const SizedBox(
         height: 10,

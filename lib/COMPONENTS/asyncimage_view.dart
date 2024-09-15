@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:koukoku_ads/MODELS/firebase.dart'; // Adjust the import path as needed
+import 'package:nothing_bagel_app_template/MODELS/firebase.dart'; // Adjust the import path as needed
 
 class AsyncImageView extends StatefulWidget {
   const AsyncImageView({
