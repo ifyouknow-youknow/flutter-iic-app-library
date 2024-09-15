@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:koukoku_ads/COMPONENTS/alert_view.dart';
+import 'package:koukoku_ads/COMPONENTS/bubble_view.dart';
 import 'package:koukoku_ads/COMPONENTS/button_view.dart';
 import 'package:koukoku_ads/COMPONENTS/loading_view.dart';
 import 'package:koukoku_ads/COMPONENTS/text_view.dart';
@@ -38,6 +39,7 @@ class _MainViewState extends State<MainView> {
           ),
 
           // ABSOLUTE
+          if (widget.dm.toggleBubble) const BubbleView(),
           if (widget.dm.toggleAlert)
             AlertView(
               title: widget.dm.alertTitle,

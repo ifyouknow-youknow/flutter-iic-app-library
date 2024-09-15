@@ -12,7 +12,7 @@ class DataMaster with _DataMasterToggles, _DataMasterStrings, _DataMasterLists {
   Map<String, dynamic> get user => _user;
   void setUser(Map<String, dynamic> value) => _user = value;
   //
-  LatLng _myLocation = LatLng(0, 0);
+  LatLng _myLocation = const LatLng(0, 0);
   LatLng get myLocation => _myLocation;
   void setMyLocation(LatLng value) => _myLocation = value;
   //
@@ -20,15 +20,20 @@ class DataMaster with _DataMasterToggles, _DataMasterStrings, _DataMasterLists {
   DataMaster();
 
 // FUNCTIONS
-  Future<bool> checkUser() async {
+  Future<bool> checkUser(String table) async {
     final user = await auth_CheckUser();
     if (user != null) {
-      var userDoc = await firebase_GetDocument('${appName}_Teachers', user.uid);
+      var userDoc = await firebase_GetDocument('${appName}_$table', user.uid);
+
+      // Check if the userDoc is empty
+      if (userDoc.isEmpty) {
+        return false; // Return false if no document was found or there was an error
+      }
 
       if (userDoc['token'] == "" || userDoc['token'] == null) {
         final token = await messaging_SetUp();
         final success = await firebase_UpdateDocument(
-            '${appName}_Teachers', userDoc['id'], {'token': token});
+            '${appName}_$table', userDoc['id'], {'token': token});
         if (success) {
           userDoc = {...userDoc, 'token': token};
         }
