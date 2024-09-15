@@ -19,19 +19,19 @@ Future<Position?> getLocation(BuildContext context) async {
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text('Location Permission Needed'),
-            content: Text(
+            title: const Text('Location Permission Needed'),
+            content: const Text(
                 'Please enable location permissions in your device settings to use this feature.'),
             actions: <Widget>[
               TextButton(
-                child: Text('Settings'),
+                child: const Text('Settings'),
                 onPressed: () {
                   Navigator.of(context).pop(); // Close the dialog
                   Geolocator.openLocationSettings(); // Open location settings
                 },
               ),
               TextButton(
-                child: Text('Cancel'),
+                child: const Text('Cancel'),
                 onPressed: () {
                   Navigator.of(context).pop(); // Close the dialog
                 },

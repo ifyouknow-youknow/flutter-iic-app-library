@@ -29,14 +29,11 @@ class DataMaster with _DataMasterToggles, _DataMasterStrings, _DataMasterLists {
       if (userDoc.isEmpty) {
         return false; // Return false if no document was found or there was an error
       }
-
-      if (userDoc['token'] == "" || userDoc['token'] == null) {
-        final token = await messaging_SetUp();
-        final success = await firebase_UpdateDocument(
-            '${appName}_$table', userDoc['id'], {'token': token});
-        if (success) {
-          userDoc = {...userDoc, 'token': token};
-        }
+      final token = await messaging_SetUp();
+      final success = await firebase_UpdateDocument(
+          '${appName}_$table', userDoc['id'], {'token': token});
+      if (success) {
+        userDoc = {...userDoc, 'token': token};
       }
       setUser(userDoc);
       return true;
