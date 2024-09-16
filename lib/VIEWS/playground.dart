@@ -10,6 +10,7 @@ import 'package:nothing_bagel_app_template/COMPONENTS/button_view.dart';
 import 'package:nothing_bagel_app_template/COMPONENTS/calendar_view.dart';
 import 'package:nothing_bagel_app_template/COMPONENTS/checkbox_view.dart';
 import 'package:nothing_bagel_app_template/COMPONENTS/circleprogress_view.dart';
+import 'package:nothing_bagel_app_template/COMPONENTS/customslider_view.dart';
 import 'package:nothing_bagel_app_template/COMPONENTS/dropdown_view.dart';
 import 'package:nothing_bagel_app_template/COMPONENTS/fade_view.dart';
 import 'package:nothing_bagel_app_template/COMPONENTS/iconbutton_view.dart';
@@ -77,6 +78,7 @@ class _PlaygroundViewState extends State<PlaygroundView> {
       const SizedBox(
         height: 10,
       ),
+      CustomSliderView()
     ]);
   }
 }

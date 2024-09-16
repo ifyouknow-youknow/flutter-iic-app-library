@@ -27,6 +27,7 @@ class _MainViewState extends State<MainView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: widget.backgroundColor,
+      resizeToAvoidBottomInset: true,
       body: Stack(
         children: [
           Column(
